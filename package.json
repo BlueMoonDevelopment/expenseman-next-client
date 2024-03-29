@@ -3,9 +3,9 @@
   "version": "5.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "cross-env PORT=8082 NODE_ENV=development next dev",
+    "build": "cross-env VERCEL_URL=expenseman.app next build",
+    "start": "cross-env PORT=8082 NODE_ENV=production VERCEL_URL=expenseman.app next start",
     "lint": "next lint",
     "post-update": "echo \"codesandbox preview only, need an update\" && pnpm update --latest"
   },
@@ -19,12 +19,13 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-scroll-to-top": "^3.0.0"
+    "svgo": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "cross-env": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "typescript": "latest"

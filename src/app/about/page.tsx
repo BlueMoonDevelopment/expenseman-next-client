@@ -7,6 +7,11 @@ import NextLink from 'next/link';
 import ProTip from '@/components/ProTip';
 import Copyright from '@/components/Copyright';
 
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'About',
+}
 export default function About() {
   return (
     <Container maxWidth="lg">

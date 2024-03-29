@@ -7,7 +7,7 @@ export default function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <MuiLink color="inherit" href="https://bluemoondev.org" target="_blank" rel="noreferrer">
-        BluemoonDevelopment
+        BlueMoonDevelopment
       </MuiLink>{' '}
       {new Date().getFullYear()}.
     </Typography>
