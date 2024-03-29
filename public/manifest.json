@@ -1,0 +1,29 @@
+{
+  "name": "ExpenseMan",
+  "short_name": "ExpenseMan",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "img/icons/icon.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    },
+    {
+      "src": "img/icons/maskable_icon.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "maskable"
+    }
+  ],
+  "description": "Manage your income and expenses with ExpenseMan",
+  "lang": "en",
+  "categories": [
+    "finance",
+    "lifestyle",
+    "productivity"
+  ]
+}
