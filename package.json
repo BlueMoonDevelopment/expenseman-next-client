@@ -2,6 +2,7 @@
   "name": "material-ui-nextjs-ts",
   "version": "5.0.0",
   "private": true,
+  "proxy": "http://localhost:8083",
   "scripts": {
     "dev": "cross-env PORT=8082 NODE_ENV=development next dev",
     "build": "cross-env VERCEL_URL=expenseman.app next build",
