@@ -9,17 +9,15 @@ import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import {GitHub} from "@mui/icons-material";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function Footer() {
     return (
         <>
-            <ScrollToTopButton />
             <Box
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    minHeight: '50vh',
+                    minHeight: '16.6vh',
                 }}
             >
                 <CssBaseline/>
