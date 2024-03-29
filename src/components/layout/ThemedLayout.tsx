@@ -4,10 +4,10 @@ import {Roboto} from "next/font/google";
 import {useMediaQuery} from "@mui/material";
 import * as React from "react";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/layout/NavBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
-import Footer from "@/components/Footer";
+import Footer from "@/components/layout/Footer";
 import Typography from "@mui/material/Typography";
 
 const roboto = Roboto({

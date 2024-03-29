@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type {Metadata} from "next"
 import {AppRouterCacheProvider} from '@mui/material-nextjs/v14-appRouter';
-import ThemedLayout from "@/components/ThemedLayout";
+import ThemedLayout from "@/components/layout/ThemedLayout";
 
 export const metadata: Metadata = {
     title: {
@@ -49,7 +49,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: { children: React.ReactNode }) {
     return (
-
         <html lang="en">
         <body>
         <AppRouterCacheProvider options={{enableCssLayer: true}}>

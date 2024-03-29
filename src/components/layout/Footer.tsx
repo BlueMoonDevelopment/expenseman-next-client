@@ -1,7 +1,7 @@
 "use client"
 import * as React from 'react';
 
-import Copyright from "@/components/Copyright";
+import Copyright from "@/components/layout/Copyright";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
