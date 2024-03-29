@@ -19,7 +19,7 @@ export default function Footer() {
                 <Grid xl={8} lg={8} md={12} sm={12} xs={12} display={"flex"} justifyContent="flex-start">
                     <Copyright/>
                 </Grid>
-                <Grid xl={2} lg={2} md={12} sm={12} xs={12} display={"flex"} justifyContent="flex-end">
+                <Grid xl={2} lg={2} md={4} sm={4} xs={4} display={"flex"}>
                     <Link href="https://github.com/BlueMoonDevelopment/expenseman-next-client"
                           target="_blank"
                           rel="noreferrer">
@@ -28,7 +28,7 @@ export default function Footer() {
                         </Button>
                     </Link>
                 </Grid>
-                <Grid xl={2} lg={2} md={12} sm={12} xs={12} display={"flex"} justifyContent="flex-end">
+                <Grid xl={2} lg={2} md={4} sm={4} xs={4} display={"flex"}>
                     <Link href="https://github.com/BlueMoonDevelopment/" target="_blank"
                           rel="noreferrer">
                         <Button variant="outlined" startIcon={<GitHub/>}>
