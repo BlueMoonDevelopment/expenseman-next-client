@@ -51,7 +51,7 @@ export default function ThemedLayout(props: { children: React.ReactNode }) {
                 <NavBar/>
                 {props.children}
                 <Container sx={{
-                    display: 'flex',
+                    display: { xs: 'none', md: 'flex' },
                     flexDirection: 'column',
                     minHeight: '50vh',
                 }} maxWidth="sm">
