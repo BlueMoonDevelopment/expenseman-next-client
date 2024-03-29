@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/theme';
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import Container from "@mui/material/Container";
 
 export const metadata: Metadata = {
     title: {
@@ -58,7 +59,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
                 <NavBar />
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline/>
+                <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
                 {props.children}
+                </Container>
                 <Footer/>
             </ThemeProvider>
         </AppRouterCacheProvider>
