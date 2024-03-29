@@ -28,7 +28,7 @@ export default function Footer() {
                     backgroundColor: (theme) =>
                         theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
                 }}>
-                    <Grid container spacing={1} minHeight={80}>
+                    <Grid container spacing={1} minHeight={40}>
                         <Grid xs display="flex" justifyContent="center" alignItems="center">
                             <Link href="https://github.com/BlueMoonDevelopment/expenseman-next-client" target="_blank"
                                   rel="noreferrer">
