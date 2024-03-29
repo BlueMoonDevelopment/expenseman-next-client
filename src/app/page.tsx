@@ -6,6 +6,7 @@ import Link from '@mui/material/Link';
 import NextLink from 'next/link';
 import ProTip from '@/components/ProTip';
 import Copyright from '@/components/Copyright';
+import Footer from "@/app/layout/Footer";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
           Go to the about page
         </Link>
         <ProTip />
-        <Copyright />
+        <Footer/>
       </Box>
     </Container>
   );

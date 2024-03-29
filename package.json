@@ -18,7 +18,8 @@
     "@mui/material-nextjs": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-scroll-to-top": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "latest",
