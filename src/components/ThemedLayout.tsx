@@ -8,6 +8,7 @@ import NavBar from "@/components/NavBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import Footer from "@/components/Footer";
+import Typography from "@mui/material/Typography";
 
 const roboto = Roboto({
     weight: ['300', '400', '500', '700'],
@@ -44,13 +45,19 @@ export default function ThemedLayout(props: { children: React.ReactNode }) {
     );
     return (
         <ThemeProvider theme={theme}>
-            <NavBar/>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline/>
-            <Container component="main" sx={{mt: 8, mb: 2}} maxWidth="sm">
+            <Typography>
+                <NavBar/>
                 {props.children}
-            </Container>
-            <Footer/>
+                <Container sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '50vh',
+                }} maxWidth="sm">
+                </Container>
+                <Footer/>
+            </Typography>
         </ThemeProvider>
     );
 }
