@@ -51,7 +51,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
     return (
         <html lang="en">
         <body>
-        <AppRouterCacheProvider options={{enableCssLayer: true}}>
+        <AppRouterCacheProvider>
             <ThemedLayout children={props.children}/>
         </AppRouterCacheProvider>
         </body>

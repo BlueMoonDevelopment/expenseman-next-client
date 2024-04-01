@@ -47,17 +47,16 @@ export default function ThemedLayout(props: { children: React.ReactNode }) {
         <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline/>
-            <Typography>
-                <NavBar/>
+            <NavBar/>
                 {props.children}
                 <Container sx={{
-                    display: { xs: 'none', md: 'flex' },
+                    display: {xs: 'none', md: 'flex'},
                     flexDirection: 'column',
                     minHeight: '50vh',
                 }} maxWidth="sm">
                 </Container>
-                <Footer/>
-            </Typography>
+            <Footer/>
+
         </ThemeProvider>
     );
 }
