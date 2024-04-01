@@ -31,6 +31,7 @@ export const metadata: Metadata = {
         locale: 'en_US',
     },
     manifest: '/manifest.json',
+
     robots: {
         index: false,
         follow: true,
