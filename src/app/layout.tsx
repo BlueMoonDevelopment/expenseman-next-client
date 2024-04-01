@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Manage your income and expenses with ExpenseMan',
     authors: [{name: 'BlueMoonDevelopment'}],
     keywords: ['expense', 'income', 'account', 'manage', 'money', 'expenseman'],
-
+    metadataBase: new URL((process.env.DEVELOPMENT ? 'http://localhost:' + process.env.PORT : 'https://expenseman.app')),
     formatDetection: {
         email: false,
         address: false,
