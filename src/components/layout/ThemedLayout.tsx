@@ -8,6 +8,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import Footer from "@/components/layout/Footer";
+import {SnackbarProvider} from "notistack";
 
 const roboto = Roboto({
     weight: ['300', '400', '500', '700'],
@@ -44,16 +45,20 @@ export default function ThemedLayout(props: { children: React.ReactNode }) {
     );
     return (
         <ThemeProvider theme={theme}>
+            <SnackbarProvider anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'center',
+            }}/>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline/>
             <NavBar/>
-                {props.children}
-                <Container sx={{
-                    display: {xs: 'none', md: 'flex'},
-                    flexDirection: 'column',
-                    minHeight: '50vh',
-                }} maxWidth="sm">
-                </Container>
+            {props.children}
+            <Container sx={{
+                display: {xs: 'none', md: 'flex'},
+                flexDirection: 'column',
+                minHeight: '50vh',
+            }} maxWidth="sm">
+            </Container>
             <Footer/>
 
         </ThemeProvider>

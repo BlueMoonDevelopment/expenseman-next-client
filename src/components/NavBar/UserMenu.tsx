@@ -11,15 +11,16 @@ import {useEffect, useState} from "react";
 import {API_ENDPOINT_URL} from "@/configuration/configuration";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {useRouter} from "next/navigation";
+import {enqueueSnackbar} from "notistack";
 
 export default function UserMenu() {
     const [signed, setSigned] = useState<Boolean | null>(null);
     const [isLoading, setLoading] = useState(true);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-
+    const router = useRouter();
     let settings: MenuEntry[] = [];
 
-    const router = useRouter();
+
     const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElUser(event.currentTarget);
     };
@@ -74,7 +75,30 @@ export default function UserMenu() {
                     onClose={handleCloseUserMenu}
                 >
                     {settings.map((setting) => (
-                        <MenuItem key={setting.name} onClick={() => router.push(setting.url)}>
+                        <MenuItem key={setting.name} onClick={() => {
+                            if (setting.url != '/auth/signout') {
+                                router.push(setting.url)
+                            } else {
+                                const url = API_ENDPOINT_URL + '/auth/signout';
+                                fetch(url, {
+                                    method: 'GET',
+                                    credentials: 'include',
+                                }).then((res) => res.status)
+                                    .then((status) => {
+                                        if (status === 200) {
+                                            enqueueSnackbar('You have been signed out! You will be redirected automatically...', {variant: 'success'})
+                                            setTimeout(() => {
+                                                window.location.href = '/';
+                                            }, 2000);
+                                        } else if (status === 401) {
+                                            enqueueSnackbar('You are already signed out!', {variant: 'warning'})
+                                        } else {
+                                            enqueueSnackbar('Error! Please try reloading the page...', {variant: 'error'})
+                                        }
+                                    });
+                            }
+                        }
+                        }>
                             <Typography textAlign="center">{setting.name}</Typography>
                         </MenuItem>
                     ))}
