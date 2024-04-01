@@ -3,6 +3,7 @@ import * as React from 'react';
 import {useState} from 'react';
 import API from "@/tools/API";
 import Button from '@mui/material/Button';
+import Container from "@mui/material/Container";
 
 export default function AccountList() {
     const [accounts, setAccounts] = useState<any[]>([]);
@@ -10,7 +11,7 @@ export default function AccountList() {
 
     const fetchAccounts = async () => {
         try {
-            const resp = await API.getAccounts("");
+            const resp = await API.getAccounts();
             if (resp.isOk) {
                 if ("data" in resp) {
                     setAccounts(resp.data);
@@ -46,7 +47,7 @@ export default function AccountList() {
     }, []);
 
     return (
-        <div>
+        <Container>
             <h1>Account List</h1>
             {loading ? (
                 <p>Loading...</p>
@@ -59,6 +60,6 @@ export default function AccountList() {
             ) : (
                 <><p>No accounts found. Let's fix that!</p><Button variant="contained" onClick={handleCreate}>Create Account</Button></>
             )}
-        </div>
+        </Container>
     );
 }

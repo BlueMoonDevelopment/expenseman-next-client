@@ -91,29 +91,26 @@ export default class API {
         });
     }
 
-    static async getAccounts(accountId: string) {
-        let data = {};
-        if(accountId !== null && accountId !== "") {
-            data = {
-                account_id: accountId
-            };
+    static async getAccounts(accountId?: string) {
+        let query: string = "";
+        if (accountId && accountId !== "") {
+            query = "?account_id=" + accountId;
         }
-        const url = API_ENDPOINT_URL + "/accounts";
+        const url = API_ENDPOINT_URL + "/accounts" + query;
         return await fetch(url, {
             method: "GET",
             credentials: "include",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(data),
-        }).then(res => {
+        }).then(async res => {
             let resp = {} as ResponseResult;
             resp.status = res.status;
             resp.isOk = res.status === 200;
             switch (res.status) {
                 case OK:
                     resp.message = "Accounts fetched successfully";
-                    resp.data = res.json();
+                    resp.data = await res.json();
                     break;
                 case UNAUTHORIZED:
                     resp.message = "You are unauthorized to do this. Please sign in";
