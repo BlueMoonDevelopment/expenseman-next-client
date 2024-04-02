@@ -7,6 +7,9 @@ import * as url from "url";
 export const middleware = async (request: NextRequest) => {
     const url = API_ENDPOINT_URL + '/auth/checksignedin';
 
+    console.log(request.cookies.toString());
+    console.log(request.headers);
+
     const res = await fetch(url, {
         method: 'GET',
         credentials: 'include',
