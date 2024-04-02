@@ -3,14 +3,13 @@ import * as React from "react";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {API_ENDPOINT_URL} from "@/configuration/configuration";
+import {CircularProgress} from "@mui/material";
+import Container from "@mui/material/Container";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
     const [signed, setSigned] = useState<Boolean | null>(null);
     const [isLoading, setLoading] = useState(true);
     const router = useRouter();
-
-
-    const url = API_ENDPOINT_URL + '/auth/checksignedin';
 
     useEffect(() => {
         const url = API_ENDPOINT_URL + '/auth/checksignedin';
@@ -26,7 +25,10 @@ export default function RootLayout(props: { children: React.ReactNode }) {
     }, []);
     if (isLoading) {
         return (
-            <></>
+            <Container>
+                <CircularProgress/>
+            </Container>
+
         )
     } else {
         if (!signed) {
