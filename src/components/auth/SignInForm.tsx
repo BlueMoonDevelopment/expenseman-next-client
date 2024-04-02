@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
@@ -56,24 +56,29 @@ export default function SignInForm() {
                     control={<Checkbox value="remember" color="primary"/>}
                     label="Remember me"
                 />
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    sx={{mt: 3, mb: 2}}
-                >
-                    Sign In
-                </Button>
+                <Grid container spacing={2}>
+                    <Grid>
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            sx={{mt: 3, mb: 2}}
+                        >
+                            Sign In
+                        </Button>
+                    </Grid>
+                    <Grid  sx={{mt: 3, mb:2}}>
+                        <SignInButton />
+                    </Grid>
+                </Grid>
+
+
                 <Grid container>
-                    <Grid item xs>
+                    <Grid xs>
                         <Link href="#" variant="body2">
                             Forgot password?
                         </Link>
                     </Grid>
-                    <Grid item xs>
-                        <SignInButton/>
-                    </Grid>
-                    <Grid item>
+                    <Grid>
                         <Link href="#" variant="body2">
                             {"Don't have an account? Sign Up"}
                         </Link>
