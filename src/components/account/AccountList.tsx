@@ -10,10 +10,14 @@ import IconButton from "@mui/material/IconButton";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Box from "@mui/material/Box";
 
+import {FinanceChart} from "@/components/account/FinanceChart";
+import {expandPaddingObject} from "@floating-ui/utils";
+
 export default function AccountList() {
     const [accounts, setAccounts] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [expandedId, setExpandedId] = useState<number | null>(null);
+    // const [showChart, setShowChart] = useState(false);
 
     const fetchAccounts = async () => {
         try {
@@ -56,6 +60,13 @@ export default function AccountList() {
         fetchAccounts().then(r => console.log("Accounts fetched"));
     }, []);
 
+    // React.useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         setShowChart(expandedId !== null);
+    //     }, 0);
+    //     return () => clearTimeout(timer);
+    // }, [expandedId]);
+
     return (
         <Container>
             <h1>Account List</h1>
@@ -82,6 +93,24 @@ export default function AccountList() {
                                     <Typography paragraph>
                                         More info about the account coming soon...
                                     </Typography>
+                                    {/*{showChart &&  (*/}
+                                    {/*    <FinanceChart data={[*/}
+                                    {/*        {name: "Jan", income: 1000, expenses: 500},*/}
+                                    {/*        {name: "Feb", income: 1200, expenses: 600},*/}
+                                    {/*        {name: "Mar", income: 1300, expenses: 700},*/}
+                                    {/*        {name: "Apr", income: 1100, expenses: 800},*/}
+                                    {/*        {name: "May", income: 900, expenses: 900},*/}
+                                    {/*        {name: "Jun", income: 1000, expenses: 1000},*/}
+                                    {/*    ]}/>*/}
+                                    {/*)}*/}
+                                    <FinanceChart data={[
+                                        {name: "Jan", income: 1000, expenses: 500},
+                                        {name: "Feb", income: 1200, expenses: 600},
+                                        {name: "Mar", income: 1300, expenses: 700},
+                                        {name: "Apr", income: 1100, expenses: 800},
+                                        {name: "May", income: 900, expenses: 900},
+                                        {name: "Jun", income: 1000, expenses: 1000},
+                                    ]}/>
                                 </CardContent>
                             </Collapse>
                         </Card>
