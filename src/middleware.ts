@@ -1,13 +1,12 @@
+"use client"
 import {NextRequest, NextResponse} from "next/server";
 import {API_ENDPOINT_URL, DEVELOPMENT_MODE} from "@/configuration/configuration";
-import * as url from "url";
 
 // This file is being used by Next.JS to ensure that the app path is authenticated, if not the user gets redirected to /auth/signin
 
 export const middleware = async (request: NextRequest) => {
     const url = API_ENDPOINT_URL + '/auth/checksignedin';
 
-    console.log(request.cookies.toString());
     console.log(request.headers);
 
     const res = await fetch(url, {
