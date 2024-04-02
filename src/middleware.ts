@@ -12,7 +12,7 @@ export const middleware = async (request: NextRequest) => {
         credentials: 'include',
         headers: {
             Cookie: request.cookies.toString(),
-            Origin: request.url,
+            Origin: DEVELOPMENT_MODE ? "http://localhost:8082" : "https://expenseman.app",
         },
     }).then(async (res) => await res.status);
 
