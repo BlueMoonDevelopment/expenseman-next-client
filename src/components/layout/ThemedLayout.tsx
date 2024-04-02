@@ -43,6 +43,8 @@ export default function ThemedLayout(props: { children: React.ReactNode }) {
             }),
         [prefersDarkMode],
     );
+
+
     return (
         <ThemeProvider theme={theme}>
             <SnackbarProvider anchorOrigin={{
@@ -62,5 +64,5 @@ export default function ThemedLayout(props: { children: React.ReactNode }) {
             <Footer/>
 
         </ThemeProvider>
-    );
+    )
 }

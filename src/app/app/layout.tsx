@@ -1,13 +1,16 @@
 "use client"
+import * as React from "react";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {API_ENDPOINT_URL} from "@/configuration/configuration";
-import * as React from "react";
 
-export default function Middleware() {
+export default function RootLayout(props: { children: React.ReactNode }) {
     const [signed, setSigned] = useState<Boolean | null>(null);
     const [isLoading, setLoading] = useState(true);
     const router = useRouter();
+
+
+    const url = API_ENDPOINT_URL + '/auth/checksignedin';
 
     useEffect(() => {
         const url = API_ENDPOINT_URL + '/auth/checksignedin';
@@ -21,10 +24,17 @@ export default function Middleware() {
                 setLoading(false);
             });
     }, []);
-
-    if (isLoading) return <></>
-
-    if (!signed) {
-        router.push('/auth/signin');
+    if (isLoading) {
+        return (
+            <></>
+        )
+    } else {
+        if (!signed) {
+            router.push('/auth/signin');
+        } else {
+            return (
+                <>{props.children}</>
+            );
+        }
     }
 }

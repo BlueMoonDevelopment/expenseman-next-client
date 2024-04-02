@@ -9,7 +9,6 @@ import Image from "next/image";
 import {Metadata} from 'next'
 
 import logo from "../../../public/img/logo/transparent-bg/expenseman-logo-transparent-with-symbol.png"
-import Middleware from "@/components/auth/Middleware";
 
 export const metadata: Metadata = {
     title: 'App',
@@ -18,7 +17,6 @@ export const metadata: Metadata = {
 export default function About() {
     return (
         <>
-            <Middleware/>
             <Container maxWidth="lg">
                 <Box
                     sx={{
