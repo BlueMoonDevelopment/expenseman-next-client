@@ -12,7 +12,7 @@ export const middleware = async (request: NextRequest) => {
         credentials: 'include',
         headers: {
             Cookie: request.cookies.toString(),
-            Origin: API_ENDPOINT_URL,
+            Origin: request.url,
         },
     }).then(async (res) => await res.status);
 
