@@ -2,8 +2,8 @@
 import * as React from 'react';
 import {Select, SelectChangeEvent} from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
-import {CartesianGrid, Legend, Line, LineChart, XAxis} from "recharts";
 import Tooltip from "@mui/material/Tooltip";
+import {LineChart} from "@mui/x-charts";
 
 interface ChartData {
     name: string;
@@ -11,25 +11,13 @@ interface ChartData {
     expenses: number;
 }
 
-interface ChartProps {
-    data: ChartData[];
-}
-
-export const FinanceChart: React.FC<ChartProps> = ({data}) => {
+export const FinanceChart = ({data}: { data: ChartData[] }) => {
     const [timeRange, setTimeRange] = React.useState<string>("1m");
-    const [showChart, setShowChart] = React.useState(false);
 
     const handleChange = (event: SelectChangeEvent<string>) => {
         setTimeRange(event.target.value);
         // TODO: Update chart data
     }
-
-    React.useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowChart(true);
-        }, 0);
-        return () => clearTimeout(timer);
-    }, []);
 
     return (
         <div>
@@ -40,17 +28,30 @@ export const FinanceChart: React.FC<ChartProps> = ({data}) => {
                 <MenuItem value={"1y"}>Past Year</MenuItem>
                 <MenuItem value={"5y"}>Past 5 Years</MenuItem>
             </Select>
-            {showChart && (
-                <Tooltip title={"Income & Expenses"}>
-                    <LineChart width={400} height={400} data={data} margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-                        <CartesianGrid strokeDasharray="3 3"/>
-                        <XAxis dataKey="name"/>
-                        <Legend/>
-                        <Line type="monotone" dataKey="income" stroke="#8884d8" activeDot={{r: 8}}/>
-                        <Line type="monotone" dataKey="expenses" stroke="#82ca9d"/>
-                    </LineChart>
-                </Tooltip>
-            )}
+            <Tooltip title={"Income & Expenses"}>
+                <LineChart
+                    // dataset={data}
+                    dataset={[{name: 'Jan', income: 1000, expenses: 500}, {name: 'Feb', income: 2000, expenses: 1000}]}
+                    series={[
+                        {dataKey: 'income', showMark: false, type: 'line'},
+                        {dataKey: 'expenses', showMark: false, type: 'line'},
+                    ]}
+                    xAxis={[
+                        {
+                            scaleType: 'point',
+                            dataKey: 'name',
+                            tickNumber: 2,
+                        }
+                    ]}
+                    yAxis={[
+                        {
+                            label: 'Income',
+                            dataKey: 'income',
+                            tickNumber: 5,
+                        }
+                    ]}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}/>
+            </Tooltip>
         </div>
     );
 }
