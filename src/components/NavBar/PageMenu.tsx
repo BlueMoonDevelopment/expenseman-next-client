@@ -6,8 +6,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
-import AdbIcon from "@mui/icons-material/Adb";
 import Button from "@mui/material/Button";
+import logoIcon from "../../../public/img/logo-trans.svg";
+import SvgIcon from "@mui/material/SvgIcon";
 
 export default function PageMenu() {
     const pages: MenuEntry[] = [
@@ -66,7 +67,7 @@ export default function PageMenu() {
                     ))}
                 </Menu>
             </Box>
-            <AdbIcon sx={{display: {xs: 'flex', md: 'none'}, mr: 1}}/>
+            <SvgIcon component={logoIcon} sx={{display: {xs: 'flex', md: 'none'}, mr: 1, width: "2em", height: "2em"}}/>
             <Typography
                 variant="h5"
                 noWrap

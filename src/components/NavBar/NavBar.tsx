@@ -7,7 +7,8 @@ import Container from '@mui/material/Container';
 import UserMenu from '@/components/NavBar/UserMenu';
 import {useRouter} from "next/navigation";
 import PageMenu from '@/components/NavBar/PageMenu';
-import AdbIcon from "@mui/icons-material/Adb";
+import logoIcon from "../../../public/img/logo-trans.svg";
+import SvgIcon from "@mui/material/SvgIcon";
 
 
 function NavBar() {
@@ -17,7 +18,7 @@ function NavBar() {
         <AppBar position="sticky">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}}/>
+                    <SvgIcon component={logoIcon} sx={{display: {xs: 'none', md: 'flex'}, mr: 1, width: "2em", height: "2em"}}/>
                     <Typography
                         variant="h6"
                         noWrap
