@@ -93,7 +93,7 @@ export default function PageMenu() {
                     <Button
                         key={page.name}
                         onClick={() => router.push(page.url)}
-                        sx={{my: 2, color: 'white', display: 'block'}}
+                        sx={{my: 2, color: 'inherit', display: 'block'}}
                     >
                         {page.name}
                     </Button>

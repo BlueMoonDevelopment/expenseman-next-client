@@ -8,7 +8,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import Footer from "@/components/layout/Footer";
 import {SnackbarProvider} from "notistack";
-import {amber, deepOrange, grey} from "@mui/material/colors";
+import {grey, green} from "@mui/material/colors";
 
 const roboto = Roboto({
     weight: ['300', '400', '500', '700'],
@@ -22,7 +22,9 @@ export const ColorModeContext = React.createContext({
 });
 
 export default function ThemedLayout(props: { children: React.ReactNode }) {
-    const [mode, setMode] = React.useState<'light' | 'dark'>('dark');
+
+    let [mode, setMode] = React.useState<'light' | 'dark'>('dark');
+
     const colorMode = React.useMemo(
         () => ({
             toggleColorMode: () => {
@@ -32,19 +34,17 @@ export default function ThemedLayout(props: { children: React.ReactNode }) {
         [],
     );
 
-
-
     const theme = React.useMemo(
         () =>
             createTheme({
                 palette: {
                     mode,
-                    /*
+
                     ...(mode === 'light'
                         ? {
                             // palette values for light mode
-                            primary: amber,
-                            divider: amber[200],
+                            primary: green,
+                            divider: green[200],
                             text: {
                                 primary: grey[900],
                                 secondary: grey[800],
@@ -52,17 +52,7 @@ export default function ThemedLayout(props: { children: React.ReactNode }) {
                         }
                         : {
                             // palette values for dark mode
-                            primary: deepOrange,
-                            divider: deepOrange[700],
-                            background: {
-                                default: deepOrange[900],
-                                paper: deepOrange[900],
-                            },
-                            text: {
-                                primary: '#fff',
-                                secondary: grey[500],
-                            },
-                        }),*/
+                        }),
                 },
                 typography: {
                     fontFamily: roboto.style.fontFamily,
@@ -94,6 +84,7 @@ export default function ThemedLayout(props: { children: React.ReactNode }) {
                 <CssBaseline/>
                 <NavBar/>
                 {props.children}
+
                 <Container sx={{
                     display: {xs: 'none', md: 'flex'},
                     flexDirection: 'column',

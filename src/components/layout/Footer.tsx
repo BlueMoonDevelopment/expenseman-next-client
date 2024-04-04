@@ -22,7 +22,7 @@ export default function Footer() {
                     <Link href="https://github.com/BlueMoonDevelopment/expenseman-next-client"
                           target="_blank"
                           rel="noreferrer">
-                        <Button variant="outlined" startIcon={<GitHub/>}>
+                        <Button variant="contained" startIcon={<GitHub/>}>
                             Source Code
                         </Button>
                     </Link>
@@ -30,7 +30,7 @@ export default function Footer() {
                 <Grid xl={2} lg={2} md={4} sm={4} xs={4} display={"flex"}>
                     <Link href="https://github.com/BlueMoonDevelopment/" target="_blank"
                           rel="noreferrer">
-                        <Button variant="outlined" startIcon={<GitHub/>}>
+                        <Button variant="contained" startIcon={<GitHub/>}>
                             BlueMoonDevelopment
                         </Button>
                     </Link>
