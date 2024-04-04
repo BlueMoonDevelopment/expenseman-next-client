@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import logoIcon from "../../../public/img/newlogo.svg";
 import SvgIcon from "@mui/material/SvgIcon";
+import ToggleColorModeButton from "@/components/NavBar/ToggleColorModeButton";
 
 export default function PageMenu() {
     const pages: MenuEntry[] = [
@@ -65,6 +66,7 @@ export default function PageMenu() {
                             <Typography textAlign="center">{page.name}</Typography>
                         </MenuItem>
                     ))}
+                    <ToggleColorModeButton/>
                 </Menu>
             </Box>
             <SvgIcon component={logoIcon} sx={{display: {xs: 'flex', md: 'none'}, mr: 1, width: "2em", height: "2em"}}/>
@@ -96,6 +98,7 @@ export default function PageMenu() {
                         {page.name}
                     </Button>
                 ))}
+                <ToggleColorModeButton/>
             </Box>
         </>
     )

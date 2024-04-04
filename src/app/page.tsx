@@ -7,6 +7,7 @@ import Link from '@mui/material/Link';
 import NextLink from 'next/link';
 import SvgIcon, {SvgIconProps} from "@mui/material/SvgIcon";
 import logoIcon from "../../public/img/newlogo.svg";
+import ToggleColorModeButton from "@/components/NavBar/ToggleColorModeButton";
 
 function LightBulbIcon(props: SvgIconProps) {
     return (
