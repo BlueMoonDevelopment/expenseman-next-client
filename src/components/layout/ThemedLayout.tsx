@@ -1,7 +1,6 @@
 "use client"
 
 import {Roboto} from "next/font/google";
-import {PaletteMode, useMediaQuery} from "@mui/material";
 import * as React from "react";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
 import NavBar from "@/components/NavBar/NavBar";
@@ -23,12 +22,11 @@ export const ColorModeContext = React.createContext({
 });
 
 export default function ThemedLayout(props: { children: React.ReactNode }) {
-    const systemmode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
-    const [mode, setMode] = React.useState<'light' | 'dark'>('light');
+    const [mode, setMode] = React.useState<'light' | 'dark'>('dark');
     const colorMode = React.useMemo(
         () => ({
             toggleColorMode: () => {
-                setMode((prevMode) => (prevMode === 'light' ? 'dark' : systemmode));
+                setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
             },
         }),
         [],
