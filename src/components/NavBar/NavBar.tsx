@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import UserMenu from '@/components/NavBar/UserMenu';
 import {useRouter} from "next/navigation";
 import PageMenu from '@/components/NavBar/PageMenu';
-import logoIcon from "../../../public/img/logo-trans.svg";
+import logoIcon from "../../../public/img/newlogo.svg";
 import SvgIcon from "@mui/material/SvgIcon";
 
 

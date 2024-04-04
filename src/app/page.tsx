@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import NextLink from 'next/link';
 import SvgIcon, {SvgIconProps} from "@mui/material/SvgIcon";
-import logoIcon from "../../public/img/logo-trans.svg";
+import logoIcon from "../../public/img/newlogo.svg";
 
 function LightBulbIcon(props: SvgIconProps) {
     return (

@@ -7,7 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import logoIcon from "../../../public/img/logo-trans.svg";
+import logoIcon from "../../../public/img/newlogo.svg";
 import SvgIcon from "@mui/material/SvgIcon";
 
 export default function PageMenu() {
