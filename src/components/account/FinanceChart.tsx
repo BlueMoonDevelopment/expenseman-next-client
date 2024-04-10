@@ -14,35 +14,14 @@ import {
 } from "@mui/x-charts";
 import dayjs from "dayjs";
 
-interface ChartData {
-    name: string;
-    income: number;
-    expenses: number;
-}
 
-// Testing purposes
-const xAxisData = [
-    new Date('2024-04-07'),
-    new Date('2024-04-08'),
-    new Date('2024-04-09'),
-    new Date('2024-04-10'),
-    new Date('2024-04-11'),
-    new Date('2024-04-12'),
-    new Date('2024-04-13'),
-];
-
-const seriesData = [
-    [820, 932, 901, 934, 1290, 1330, 1320], // income
-    [220, 182, 191, 234, 290, 330, 310], // expenses
-]
-
-export const FinanceChart = ({data}: { data: ChartData[] }) => {
+export const FinanceChart = ({dates, income, expenses}: { dates: Date[], income: number[], expenses: number[] }) => {
     const [timeRange, setTimeRange] = React.useState<string>("1m");
 
     const xAxis = [{
         label: 'Date',
-        data: xAxisData,
-        tickInterval: xAxisData,
+        data: dates,
+        tickInterval: dates,
         scaleType: 'time',
         valueFormatter: (date: Date) => dayjs(date).format('MMM DD'),
     }];
@@ -65,8 +44,8 @@ export const FinanceChart = ({data}: { data: ChartData[] }) => {
             </Select>
             <ResponsiveChartContainer xAxis={xAxis} yAxis={yAxis}
                                       series={[
-                                          {type: 'line', label: 'Income', data: seriesData[0]},
-                                          {type: 'line', label: 'Expenses', data: seriesData[1]},
+                                          {type: 'line', label: 'Income', data: income},
+                                          {type: 'line', label: 'Expenses', data: expenses},
                                       ]}
                                       height={height}>
                 <LinePlot/>

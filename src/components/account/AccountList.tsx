@@ -19,6 +19,20 @@ export default function AccountList() {
     const [expandedId, setExpandedId] = useState<number | null>(null);
     // const [showChart, setShowChart] = useState(false);
 
+    // Testing purposes
+    const xAxisData = [
+        new Date('2024-04-07'),
+        new Date('2024-04-08'),
+        new Date('2024-04-09'),
+        new Date('2024-04-10'),
+        new Date('2024-04-11'),
+        new Date('2024-04-12'),
+        new Date('2024-04-13'),
+    ];
+
+    const income = [820, 932, 901, 934, 1290, 1330, 1320];
+    const expenses = [220, 182, 191, 234, 290, 330, 310];
+
     const fetchAccounts = async () => {
         try {
             const resp = await API.getAccounts();
@@ -93,24 +107,7 @@ export default function AccountList() {
                                     <Typography paragraph>
                                         More info about the account coming soon...
                                     </Typography>
-                                    {/*{showChart &&  (*/}
-                                    {/*    <FinanceChart data={[*/}
-                                    {/*        {name: "Jan", income: 1000, expenses: 500},*/}
-                                    {/*        {name: "Feb", income: 1200, expenses: 600},*/}
-                                    {/*        {name: "Mar", income: 1300, expenses: 700},*/}
-                                    {/*        {name: "Apr", income: 1100, expenses: 800},*/}
-                                    {/*        {name: "May", income: 900, expenses: 900},*/}
-                                    {/*        {name: "Jun", income: 1000, expenses: 1000},*/}
-                                    {/*    ]}/>*/}
-                                    {/*)}*/}
-                                    <FinanceChart data={[
-                                        {name: "Jan", income: 1000, expenses: 500},
-                                        {name: "Feb", income: 1200, expenses: 600},
-                                        {name: "Mar", income: 1300, expenses: 700},
-                                        {name: "Apr", income: 1100, expenses: 800},
-                                        {name: "May", income: 900, expenses: 900},
-                                        {name: "Jun", income: 1000, expenses: 1000},
-                                    ]}/>
+                                    <FinanceChart dates={xAxisData} income={income} expenses={expenses}/>
                                 </CardContent>
                             </Collapse>
                         </Card>
