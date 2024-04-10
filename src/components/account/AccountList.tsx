@@ -21,6 +21,8 @@ export default function AccountList() {
 
     // Testing purposes
     const xAxisData = [
+        new Date('2020-04-07'),
+        new Date('2023-06-07'),
         new Date('2024-04-07'),
         new Date('2024-04-08'),
         new Date('2024-04-09'),
@@ -30,8 +32,8 @@ export default function AccountList() {
         new Date('2024-04-13'),
     ];
 
-    const income = [820, 932, 901, 934, 1290, 1330, 1320];
-    const expenses = [220, 182, 191, 234, 290, 330, 310];
+    const income = [50, 50, 820, 932, 901, 934, 1290, 1330, 1320];
+    const expenses = [100, 125, 220, 182, 191, 234, 290, 330, 310];
 
     const fetchAccounts = async () => {
         try {
