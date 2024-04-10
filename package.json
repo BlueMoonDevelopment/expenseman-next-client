@@ -18,11 +18,11 @@
     "@mui/material": "latest",
     "@mui/material-nextjs": "latest",
     "@mui/x-charts": "^7.1.0",
+    "dayjs": "^1.11.10",
     "next": "latest",
     "notistack": "^3.0.1",
     "react": "latest",
     "react-dom": "latest",
-    "recharts": "^2.12.3",
     "sharp": "^0.33.3",
     "svgo": "latest"
   },
